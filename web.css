@@ -1,0 +1,618 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: azure;
+
+}
+
+.container{
+    margin: 10px;
+    display: grid;
+}
+
+
+/* HEADER*/
+
+.head{
+    display: grid;
+    grid-template-areas: 
+        'hero fitur-1'
+        'hero fitur-2';
+    color: white;
+    text-align: center;
+}
+
+.hero{
+    grid-area: hero;
+    background-image: url(gambar/aa.jpg);
+    min-height: 500px;
+    background-position: center;
+    background-size: cover;
+    padding-top: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero .judul,.isi{
+    display: none;
+}
+
+
+.fitur{
+    background-size: cover;
+    background-position: center;
+    padding-top: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fitur-1{
+    grid-area: fitur-1;
+    background-image:url(gambar/siluet1.jpg);
+}
+
+.fitur-2{
+    grid-area: fitur-2;
+    background-image:url(gambar/aaa.jpg);
+}
+
+.art{
+    font-size: 1.5em;
+}
+
+.price{
+    font-size: 3em;
+    font-weight: 200;
+}
+
+
+
+/* Navigasi */
+
+.navigasi{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-top: 10px;
+    order: -1;
+}
+
+.navigasi .brand{
+    font-family: "Berkshire Swash";
+    color: orangered;
+    font-size: 1.8em;
+}
+
+.list ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+    padding-top: 12px;
+    gap: 10px;
+}
+
+.list ul li{
+    list-style: none;
+    text-align: center;
+}
+
+.list ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: "Berkshire Swash";
+    font-size: 1.5em;
+    width: 120px;
+
+}
+
+.list ul li a:hover{
+    background-color: orangered;
+    border-radius: 4px;
+    color: #ffffff;
+}
+
+.hamburger{
+    display: none;
+}
+
+
+
+
+
+/* Section */
+
+.section{
+    display: grid;
+    text-align: center;
+    gap: 10px;
+    margin: 10px;
+    padding: 10px;
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+}
+
+.project{
+    background-color: rgb(255, 230, 221);
+    box-shadow: 2px 2px 2px black;
+    height: 100%;
+}
+
+.emote{
+    font-size: 2.5em;
+}
+
+.section p{
+    font-size: 20px;
+    padding: 10px;
+}
+
+.project h2{
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.project:hover{
+    background-color: orangered; 
+    color: white;
+}
+
+.section a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+/* Main */
+
+.main{
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(255, 51, 0);
+    text-align: center; 
+}
+
+.gambar img{
+    width: 400px;
+    height: 280px;
+    cursor: pointer;
+}
+
+
+.gambar img:hover{
+    opacity: .5;
+}
+
+.overlay{
+    position: fixed;
+    right: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0,.8);
+    z-index: 9;
+}
+
+.overlay:target{
+    bottom: 0;
+    top: 0;
+}
+
+.overlay img{
+    width: 80%;
+    height: 90%;
+    margin-top: 35px;
+    box-shadow: -5px 5px 7px black;
+}
+
+.overlay:target img{
+    animation: zoom 3s ease;
+}
+
+.overlay:target a{
+    animation: silang 12s alternate;    
+}
+
+.overlay a{
+    position: absolute;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 185, 185);
+    background-color: rgb(255, 25, 25);
+    border: 3px solid black;
+    width: 40px;
+    top: 2%;
+    right: 8%;
+    height: 30px;
+    line-height: 25px;
+    border-radius: 100%;
+}
+
+.overlay a:hover{
+    color: white;
+    background-color: rgb(223, 0, 0);
+}
+
+@keyframes zoom {
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to{
+        opacity: 100;
+        transform: scale(1);
+    }
+}
+@keyframes silang {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 100;
+    }
+}
+
+
+
+
+/* Kontak */
+
+.kontak{
+    background-color: orangered;
+    color: white;
+    font-size: 30px;
+    padding-left: 20px;
+    margin-top: 20px;
+    border:2px solid rgb(255, 157, 91);
+    margin-left: -20px;
+    margin-bottom: -20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive */
+
+@media screen and (max-width:1024px){
+    .container{
+        margin: 20px;
+    }
+
+    .hero .judul,.isi{
+        display: block;
+        font-size: 2em;
+    }
+
+
+    .navigasi{
+        order: inherit;
+    }
+
+    .section{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .overlay img{
+        height: 500px;
+    }
+
+    .overlay a{
+        top: 2%;
+        right: 7.5%;
+    }
+
+}
+
+
+@media screen and (max-width:800px){
+    .overlay a{
+        top: 1%;
+    }
+}
+
+
+
+
+@media screen and (max-width:768px){
+    .navigasi{
+        grid-template-columns: 1fr;
+        order: -1;
+        margin-bottom: 10px;
+    }
+
+    .navigasi .brand{
+        display: none;
+    }
+
+    .overlay img{
+        margin-top: 21%;
+        width: 90%;
+        height: 60%;
+    }
+
+    .overlay a{
+        top: 14%;
+        right: 1.5%;
+    }
+
+}
+
+
+
+
+
+@media screen and (max-width:576px){
+    .head{
+        grid-template-areas: 
+        'hero'
+        'fitur-1'
+        'fitur-2';
+        margin-right: 3px;
+    }
+
+    .fitur{
+        height: 300px;
+    }
+
+    .list {
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       position: absolute;
+       background-color: orangered;
+       text-align: center;
+       height: 100vh;
+       right: 0;
+       top: 0;
+       width: 150px;
+       transform: translateX(100%) ;
+       opacity: 0;
+       padding-top: 50px;
+       transition: 2s ease;
+    }
+
+    .list ul li{
+        height: 120px;
+        line-height: 100px;
+    }
+
+    .geser{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .navigasi ul li a{
+        color: rgb(255, 233, 219);
+    }
+
+    .hamburger{
+        display: grid;
+        justify-items: end;
+        height: 32px;
+        right: 20px;
+    }
+
+    .hamburger input{
+        position: absolute;
+        width: 42px;
+        height: 36px;
+        opacity: 0;
+        margin-right: 5px;
+        margin-top: -2px;
+        z-index: 2;
+    }
+
+    .hamburger span{
+        display: flex;
+        justify-content: space-evenly;
+        width: 40px;
+        height: 5px;
+        background-color: rgb(255, 185, 173);
+        border-radius: 3px;
+        z-index: 1;
+        margin-right: 5px;
+        
+    }
+
+    .navigasi .brand{
+        display: grid;
+        position: absolute;
+        top: 16px;
+    }
+
+    .overlay img{
+        margin-top: 25%;
+        width: 80%;
+        height: 65%;
+    }
+
+    .overlay a{
+        font-size: 22px;
+        top: 18%;
+        right: 6%;
+        width: 30px;
+        height: 30px;
+        line-height: 28px;
+    }
+}
+
+@media screen and (max-width:414px){
+    .head{
+        margin-top: 10px;
+        font-size: 12px;
+        margin-right: 18px;
+    }
+
+    .hamburger span{
+        margin-right: 23px;
+    }
+
+    .hamburger input{
+        margin-right: 22px;
+    }
+
+    .section{
+        padding-right: 32px;
+    }
+
+    .main img{
+        width: 370px;
+        margin-right: 20px;
+    }
+
+    .overlay img{
+        margin-top: 32%;
+        width: 90%;
+        height: 40%;
+        margin-right: 2px;
+    }
+
+    .overlay a{
+        width: 24px;
+        height: 21px;
+        line-height: 18px;
+        font-size: 16px;
+        right: 2%;
+        top: 14%;;
+    }
+
+    .kontak{
+        font-size: 25px;
+    }
+}
+
+
+@media screen and (max-width:411px) {
+    .overlay a{
+        top:16%;
+    }
+}
+
+
+
+@media screen and (max-width:375px){
+    .head{
+        width: 340px;
+        margin-left: -2px;
+    }
+
+    .brand h2{
+        font-size: 35px;
+        margin-top: 10px;
+    }
+
+
+    .hamburger span{
+        margin-right: 65px;
+        width: 35px;
+    }
+
+    .hamburger input{
+        margin-top: -5px;
+        margin-right: 60px;
+    }
+
+    .section {
+        margin-right: 60px;
+    }
+
+    .galeri {
+        width: 210px;
+        margin-left: 15%;
+    }
+
+    .gambar img{
+        width: 320px;
+        margin-right: 65px;
+    }
+
+
+    .overlay img{
+        margin-top: 150px;
+        width: 320px;
+        margin-left: -18px;
+    }
+
+    .overlay a{
+        top: 18%;
+        right: 10%;
+    }
+
+    .kontak{
+        font-size: 20px;
+    }
+}
+
+
+@media screen and (max-width:360px){
+    .head{
+        width:330px;
+        min-height: 300px;
+    }
+
+    .brand h2{
+        font-size: 35px;
+        margin-top: 10px;
+    }
+
+    .list{
+        width: 150px;
+    }
+
+    .hamburger{
+        margin-top: 10px;
+    }
+    
+    .hamburger span{
+        margin-right: 85px;
+        width: 35px;
+        height: 3px;
+    }
+
+    .hamburger input{
+        margin-right: 75px;
+    }
+
+    .section{
+        margin-right: 70px;
+    }
+
+    .galeri h2{
+        width:300px ;
+        margin-left: -40px;
+    }
+
+    .gambar img{
+        width: 300px;
+        height: 220px;
+        margin-right: 80px;
+    }   
+
+    .overlay img{
+        width: 300px;
+        height: 240px;
+        margin-top:40%;
+        margin-right: 40px;
+    }
+
+    .overlay a{
+        top: 17.5%;
+        right: 17%;
+    }
+
+    .kontak{
+        font-size: 20px;
+    }
+}
+
+
